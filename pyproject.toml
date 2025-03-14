@@ -1,0 +1,23 @@
+# --- PROJECT CONFIGURATION --- #
+
+[build-system]
+requires = ["setuptools>=67", "wheel", "setuptools-git-versioning>=2.0,<3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-programming-game" ##
+version = "0.1.0"
+description = "Game made for Python programming course" ##
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.10.0"
+license = {text = "MIT License"}
+authors = [
+    { name = "Bodansky Dániel"} ##
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "pygame >= 2.6.1"
+]

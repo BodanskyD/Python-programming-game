@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: python-programming-game
+Version: 0.1.0
+Summary: Game made for Python programming course
+Author: Bodansky Dániel
+License: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame>=2.6.1
+
+# Game made for Python programming course
+

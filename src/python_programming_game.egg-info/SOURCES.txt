@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/python_programming_game.egg-info/PKG-INFO
+src/python_programming_game.egg-info/SOURCES.txt
+src/python_programming_game.egg-info/dependency_links.txt
+src/python_programming_game.egg-info/requires.txt
+src/python_programming_game.egg-info/top_level.txt
