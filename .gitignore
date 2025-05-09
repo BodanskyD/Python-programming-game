@@ -1,2 +1,4 @@
 myenv
 build
+src/game/__pycache__
+src/game/python_programming_game.egg-info

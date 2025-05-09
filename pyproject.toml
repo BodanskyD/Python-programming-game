@@ -1,7 +1,7 @@
 # --- PROJECT CONFIGURATION --- #
 
 [build-system]
-requires = ["setuptools>=67", "wheel", "setuptools-git-versioning>=2.0,<3"]
+requires = ["setuptools>=67", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -19,5 +19,15 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 dependencies = [
-    "pygame >= 2.6.1"
+    "pygame-ce >= 2.5.3"
 ]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src/game"]
+
+[tool.setuptools.package-data]
+assets = ["*.png", "*.ttf", "*.txt"]
+
