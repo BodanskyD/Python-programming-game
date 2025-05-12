@@ -1,7 +1,7 @@
 import pygame
-from Menu import MenuItem
-import SceneManager
-from Game import Game
+from src.game.Menu import MenuItem
+from src.game.SceneManager import SceneManager
+from src.game.Game import Game
 
 
 class MainMenu():
@@ -22,7 +22,7 @@ class MainMenu():
 
     def update(self):
         if self.menu.sprites()[0].clicked:
-            SceneManager.SceneManager().set_scene(Game(self.screen))
+            SceneManager().set_scene(Game(self.screen))
         self.screen.fill((0, 0, 0))
         self.menu.update()
         for event in pygame.event.get():

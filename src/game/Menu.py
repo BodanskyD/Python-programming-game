@@ -1,4 +1,6 @@
 import pygame
+import src.game.assets as assets
+from importlib import resources as impresources
 
 
 class MenuItem(pygame.sprite.Sprite):
@@ -8,8 +10,11 @@ class MenuItem(pygame.sprite.Sprite):
 
         self.image = surface
         self.rect = self.image.get_rect(center=(x, y))
+        # self.font = pygame.font.Font(
+        #     "assets/gravity_pixel_font/GravityBold8.ttf", size=24)
         self.font = pygame.font.Font(
-            "assets/gravity_pixel_font/GravityBold8.ttf", size=24)
+            impresources.files(assets) / 'gravity_pixel_font' /
+            'GravityBold8.ttf')
 
         self.text = text
         self.hovered = False
