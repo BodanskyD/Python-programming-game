@@ -10,10 +10,4 @@ class Singleton(type):
 
 class SceneManager(metaclass=Singleton):
     def __init__(self, scene):
-        self._scene = scene
-
-    def get_scene(self):
-        return self._scene
-
-    def set_scene(self, scene):
-        self._scene = scene
+        self.scene = scene

@@ -1,7 +1,7 @@
 # --- PROJECT CONFIGURATION --- #
 
 [build-system]
-requires = ["setuptools>=67", "wheel"]
+requires = ["setuptools>=67","setuptools-scm>=8.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -22,8 +22,5 @@ dependencies = [
     "pygame-ce >= 2.5.3"
 ]
 
-[tool.setuptools]
-include-package-data = true
-
-[tool.setuptools.package-data]
-assets = ["*.png", "*.ttf", "*.txt"]
+[project.scripts]
+ppg = "game.app:main"

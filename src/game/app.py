@@ -1,9 +1,8 @@
 import pygame
-from src.game.MainMenu import MainMenu
-from src.game.SceneManager import SceneManager
+from game.main_menu import MainMenu
+from game.scene_manager import SceneManager
 import sys
 from importlib import resources as impresources
-import src.game.assets as assets
 
 
 def main():
@@ -15,7 +14,7 @@ def main():
 
     # crosshair = pygame.image.load("assets/crosshair/crosshair.png")
     crosshair = pygame.image.load(
-        impresources.files(assets) / 'crosshair' / 'crosshair.png')
+        impresources.files('game.assets') / 'crosshair' / 'crosshair.png')
     crosshair.convert()
     crosshair.set_colorkey((0, 0, 0))
     cursor = pygame.cursors.Cursor((16, 16), crosshair)
@@ -24,7 +23,7 @@ def main():
 
     while running:
 
-        scene = SceneManager().get_scene()
+        scene = SceneManager().scene
 
         running = scene.update()
 
