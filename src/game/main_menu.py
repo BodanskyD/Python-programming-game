@@ -68,7 +68,7 @@ class MainMenu():
         self.menu.add(start)
         self.menu.add(close)
 
-    def update(self):
+    def update(self, dt):
         if self.menu.sprites()[0].clicked:
             SceneManager().scene = Game(self.screen)
         self.screen.fill((0, 0, 0))

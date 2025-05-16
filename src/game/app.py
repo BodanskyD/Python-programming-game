@@ -22,10 +22,11 @@ def main():
     SceneManager(MainMenu(screen))
 
     while running:
+        pygame.display.set_caption(str(clock.get_fps()))
 
         scene = SceneManager().scene
 
-        running = scene.update()
+        running = scene.update(clock.get_time()/1000)
 
         pygame.display.flip()
 

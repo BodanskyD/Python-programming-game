@@ -24,20 +24,20 @@ class Gun(ABC):
 class M16(Gun):
 
     def __init__(self, factor):
-        super().__init__(factor, "m16-smaller.png", -12, 4, 15, 13, 420)
+        super().__init__(factor, "m16-smaller.png", -12, 300, 15, 13, 420)
 
 
 class Pistol(Gun):
 
     def __init__(self, factor):
-        super().__init__(factor, "pistol.png", -12, 5, 27, 24, 180)
+        super().__init__(factor, "pistol.png", -12, 360, 27, 24, 180)
 
 
 class Fist:
 
     def __init__(self):
         self.sprite = None
-        self.speed = 5
+        self.speed = 360
         self.walk_offset = 3
         self.char_sprite_num = 0
 
