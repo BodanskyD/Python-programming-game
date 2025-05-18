@@ -430,7 +430,6 @@ class Tiles(metaclass=Singleton):
         self.tiles = {}
 
     def index_tiles(self, i):
-        update = False
         if i not in self.tiles:
             j, y = divmod(i, 12)
             self.tiles[i] = pygame.transform.scale_by(

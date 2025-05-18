@@ -1,0 +1,14 @@
+------------------------------
+Checking .
+Getting metadata for wheel...
+Found python_programming_game
+------------------------------
+The classifiers should specify what minor versions of Python you support as well as what major version.
+Your package does not have keywords data.
+Your package does not have author_email data.
+Your package should have a 'url' field with a link to the project home page, or a 'project_urls' field, with a dictionary of links, or both.
+Specifying a development status in the classifiers gives users a hint of how stable your software is.
+------------------------------
+Final rating: 7/10
+Jarlsberg
+------------------------------

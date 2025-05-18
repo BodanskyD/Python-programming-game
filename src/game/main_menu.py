@@ -76,5 +76,3 @@ class MainMenu():
             if event.type == pygame.QUIT:
                 return False
         return not self.menu.sprites()[1].clicked
-
-
