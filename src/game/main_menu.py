@@ -11,8 +11,6 @@ class MenuItem(pygame.sprite.Sprite):
 
         self.image = surface
         self.rect = self.image.get_rect(center=(x, y))
-        # self.font = pygame.font.Font(
-        #     "assets/gravity_pixel_font/GravityBold8.ttf", size=24)
         self.font = pygame.font.Font(
             impresources.files('game.assets') / 'gravity_pixel_font' /
             'GravityBold8.ttf')
