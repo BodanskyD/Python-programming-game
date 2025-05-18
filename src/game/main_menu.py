@@ -1,7 +1,8 @@
 import pygame
 from game.scene_manager import SceneManager
-from game.game import Game
 from importlib import resources as impresources
+from game.level import Level1
+from game.game import Game
 
 
 class MenuItem(pygame.sprite.Sprite):
@@ -68,10 +69,12 @@ class MainMenu():
 
     def update(self, dt):
         if self.menu.sprites()[0].clicked:
-            SceneManager().scene = Game(self.screen)
+            SceneManager().scene = Game(self.screen, Level1)
         self.screen.fill((0, 0, 0))
         self.menu.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return False
         return not self.menu.sprites()[1].clicked
+
+

@@ -81,8 +81,15 @@ class Character(pygame.sprite.Sprite):
 
 class Player(Character):
 
-    def __init__(self):
-        super().__init__('player_sheet_outline.png', (0, 0))
+    def __init__(self, gun="pistol"):
+        super().__init__('player_sheet_outline.png', (200, 200))
+        if gun == "pistol":
+            self.gun = self.pistol
+        elif gun == "m16":
+            self.gun = self.m16
+        self.heart = pygame.transform.scale_by(pygame.image.load(
+            impresources.files('game.assets') / 'character' /
+            'heart.png').convert_alpha(), 3)
 
     def handle_attack(self):
         if pygame.mouse.get_pressed()[0]:
@@ -101,9 +108,9 @@ class Player(Character):
             self.direction += pygame.Vector2(0, 1)
         if keys[pygame.K_d]:
             self.direction += pygame.Vector2(1, 0)
-        if keys[pygame.K_q]:
-            self.gun = self.fist
-            self.sprite_index = 0
+        # if keys[pygame.K_q]:
+        #     self.gun = self.fist
+        #     self.sprite_index = 0
 
         if self.direction != pygame.Vector2():
             self.walking = True
@@ -126,16 +133,25 @@ class Player(Character):
 
 class Enemy(Character):
 
-    def __init__(self, position):
+    def __init__(self, position, weapon="pistol"):
         super().__init__('enemy_sheet.png', position)
+        if weapon == "pistol":
+            self.gun = self.pistol
+        elif weapon == "m16":
+            self.gun = self.m16
+        else:
+            self.gun = self.fist
         self.line_start = pygame.Vector2(self._rect.center)
         self.line_end = (0, 0)
         self.line_walls = []
         self.line_player = []
+        self.last_player_pos = (0, 0)
+        self.position = pygame.Vector2(self.position)
 
     def handle_attack(self):
-        shoot = True
+        shoot = False
         if self.line_player:
+            shoot = True
             line_player_start, _ = self.line_player
             for line_wall in self.line_walls:
                 if line_wall:
@@ -144,15 +160,12 @@ class Enemy(Character):
                             line_wall_start) < self.line_start.distance_to(
                                 line_player_start):
                         shoot = False
-        # have multiple rays with slightly offset angle
         start_x, start_y = self._rect.center
-        end_x, end_y = pygame.Vector2(0, -1).rotate(-self.angle) * 800
+        end_x, end_y = pygame.Vector2(0, -1).rotate(-self.angle) * 500
         end_x += start_x
         end_y += start_y
         self.line_start = pygame.Vector2(start_x, start_y)
         self.line_end = (end_x, end_y)
-        # if line start distance to clipline(player) <
-        # line start distance to clipline(wall) => shoot
         if shoot:
             return self.gun.shoot(self.angle)
 
