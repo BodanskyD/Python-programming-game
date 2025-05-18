@@ -1,3 +1,4 @@
+# https://stackoverflow.com/a/6798042
 class Singleton(type):
     _instances = {}
 
